@@ -5,10 +5,10 @@ Tool parts that I chose: Part 2 Selenium WebDriver in Java and Part 4 Cypress
 ## Part 0
 - Step 0.1, Chrome version: 158.0.8127.37 (Official Build) (arm64) 
 - Step 0.3, ChromeDriver version: ChromeDriver 158.0.8127.36
-- Step 0.4, locator of Pizza, Please!:
-- Step 0.4, locator of Excluded tools:
-- Step 0.4, locator of Must be vegetarian:
-- Step 0.4, locator of Custom Pizza Name:
+- Step 0.4, locator of Pizza, Please!: name=pizza-please
+- Step 0.4, locator of Excluded tools: css=select
+- Step 0.4, locator of Must be vegetarian: id=default-checkbox
+- Step 0.4, locator of Custom Pizza Name: css=input#pizza-name
 - Step 0.5, pizza name, tool and calories of the run by hand:
 
 | Step | Actual result | Pass or fail |
