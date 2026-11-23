@@ -67,6 +67,11 @@ class QP01Test extends BaseTest {
         int perSlice = Integer.parseInt(result("Calories per slice: "));
         assertNotEquals("Knife", tool);
         assertTrue(perSlice <= 600, "calories per slice: " + perSlice);
+
+        // Step 5: rate it without logging in
+        driver.findElement(By.name("rate-5")).click();
+        wait.until(ExpectedConditions.textToBePresentInElementLocated(
+                By.id("rate-result"), "Please log in first."));
         // Add the next step above this line.
     }
 
