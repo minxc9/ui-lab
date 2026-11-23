@@ -72,6 +72,27 @@ class QP01Test extends BaseTest {
         driver.findElement(By.name("rate-5")).click();
         wait.until(ExpectedConditions.textToBePresentInElementLocated(
                 By.id("rate-result"), "Please log in first."));
+
+        // Step 6: log in as the admin in the same browser
+        driver.get(HOME + "admin");
+        wait.until(ExpectedConditions.presenceOfElementLocated(
+                By.id("svelte-announcer")));
+        WebElement user = driver.findElement(By.id("username"));
+        user.clear();
+        user.sendKeys("admin");
+        WebElement password = driver.findElement(By.id("password"));
+        password.clear();
+        password.sendKeys("admin");
+        driver.findElement(By.cssSelector("button[type=submit]")).click();
+        wait.until(ExpectedConditions.textToBePresentInElementLocated(
+                By.tagName("body"), "Latest pizza recommendations"));
+
+        // Step 7: find the pizza in the list, with the same tool
+        WebElement entry = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.xpath(
+                "//li[contains(., '" + pizzaName + "')]")));
+        assertTrue(entry.getText().contains("(tool=" + tool + ","),
+                entry.getText());
         // Add the next step above this line.
     }
 
