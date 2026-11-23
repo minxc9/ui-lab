@@ -41,6 +41,23 @@ class QP01Test extends BaseTest {
                 "//label[normalize-space()='Max Calories per Slice']"
                 + "/preceding-sibling::input")));
 
+        // Step 3: fill in the restrictions and the name
+        calories.clear();
+        calories.sendKeys("600");
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
+                "//select/option[normalize-space()='Knife']")));
+        Select tools = new Select(driver.findElement(By.tagName("select")));
+        tools.selectByVisibleText("Knife");
+        WebElement vegetarian =
+                driver.findElement(By.id("default-checkbox"));
+        vegetarian.click();
+        WebElement name =
+                driver.findElement(By.cssSelector("input#pizza-name"));
+        name.sendKeys(pizzaName);
+        assertEquals("600", calories.getDomProperty("value"));
+        assertEquals("Knife", tools.getFirstSelectedOption().getText());
+        assertTrue(vegetarian.isSelected());
+        assertEquals(pizzaName, name.getDomProperty("value"));
         // Add the next step above this line.
     }
 }
