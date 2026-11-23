@@ -9,17 +9,17 @@ Tool parts that I chose: Part 2 Selenium WebDriver in Java and Part 4 Cypress
 - Step 0.4, locator of Excluded tools: css=select
 - Step 0.4, locator of Must be vegetarian: id=default-checkbox
 - Step 0.4, locator of Custom Pizza Name: css=input#pizza-name
-- Step 0.5, pizza name, tool and calories of the run by hand:
+- Step 0.5, pizza name, tool and calories of the run by hand: Lab Pizza 20261124-023510 tool=Scissors, calories per slice: 425
 
 | Step | Actual result | Pass or fail |
 |------|---------------|--------------|
-| 1    |               |              |
-| 2    |               |              |
-| 3    |               |              |
-| 4    |               |              |
-| 5    |               |              |
-| 6    |               |              |
-| 7    |               |              |
+| 1    | Heading "Looking to break out of your pizza routine?" shown | Pass |
+| 2    | Max Calories per Slice, Excluded tools, Must be vegetarian and Custom Pizza Name appeared | Pass |
+| 3    | Fields showed 600, Knife, vegetarian ticked, Lab Pizza 20261124-023510 | Pass |
+| 4    | Name: Lab Pizza 20261124-023510, Tool: Scissors, Calories per slice: 425 | Pass |
+| 5    | "Please log in first." shown | Pass |
+| 6    | "Latest pizza recommendations" shown after admin/admin | Pass |
+| 7    | Lab Pizza 20261124-023510 (tool=Scissors, ingredients_number=6) | Pass |
 
 
 ## Part 2: Selenium WebDriver in Java
