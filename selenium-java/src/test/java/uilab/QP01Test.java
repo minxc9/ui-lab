@@ -58,6 +58,23 @@ class QP01Test extends BaseTest {
         assertEquals("Knife", tools.getFirstSelectedOption().getText());
         assertTrue(vegetarian.isSelected());
         assertEquals(pizzaName, name.getDomProperty("value"));
+
+        // Step 4: ask for a pizza and check the recommendation
+        driver.findElement(By.name("pizza-please")).click();
+        wait.until(ExpectedConditions.textToBePresentInElementLocated(
+                By.id("recommendations"), "Name: " + pizzaName));
+        String tool = result("Tool: ");
+        int perSlice = Integer.parseInt(result("Calories per slice: "));
+        assertNotEquals("Knife", tool);
+        assertTrue(perSlice <= 600, "calories per slice: " + perSlice);
         // Add the next step above this line.
+    }
+
+    // Returns the rest of the result line that starts with the label.
+    private String result(String label) {
+        By line = By.xpath("//div[@id='recommendations']//p[starts-with("
+                + "normalize-space(), '" + label + "')]");
+        return driver.findElement(line).getText()
+                .substring(label.length()).trim();
     }
 }
