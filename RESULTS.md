@@ -37,7 +37,7 @@ Tool parts that I chose: Part 2 Selenium WebDriver in Java and Part 4 Cypress
 
       -'Web form'
       +'Web Form'
-- Step 4.6, tool and calories in the answer of POST /api/pizza:
+- Step 4.6, tool and calories in the answer of POST /api/pizza: tool Pizza cutter, calories 550 
 - Step 4.7, the line of the admin list that shows your pizza:
 - Step 4.8, run 1, result, duration and pizza name:
 - Step 4.8, run 2, result, duration and pizza name:
