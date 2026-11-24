@@ -30,7 +30,7 @@ Tool parts that I chose: Part 2 Selenium WebDriver in Java and Part 4 Cypress
 - Step 2.20, full run 2, time and number of tests: Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Total time:  24.065 s
 
 ## Part 4: Cypress
-- node --version, npm --version and npx cypress version:
+- node --version, npm --version and npx cypress version: v26.2.0, 11.13.0, Cypress package version: 16.2.1, Cypress binary version: 16.2.1
 - Step 4.3, failure message for the wrong title:
 - Step 4.6, tool and calories in the answer of POST /api/pizza:
 - Step 4.7, the line of the admin list that shows your pizza:
