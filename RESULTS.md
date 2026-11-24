@@ -44,10 +44,16 @@ Tool parts that I chose: Part 2 Selenium WebDriver in Java and Part 4 Cypress
 - Step 4.9 (optional), browser and result:
 
 ## Part B
-1.
-2.
-3.
-4.
-5.
-6.
-7.
+1. `$$("#floating_filled").length` returned 3, because the three number boxes share one id, so the tests find Max Calories per Slice through its label instead. I propose a unique id such as `id="max-calories"` for each box. A unique id gives a short locator that does not break when the label text or layout changes.
+
+2. It is a consistency oracle, because it compares the recommendation that the customer sees with the record that the admin sees. In my run both showed Scissors for Lab Pizza 20261124-173017, below pizzas from other users. It would catch a fault where the server saves a different tool than it shows the customer.
+
+3. The page shows only ingredient names, so the test cannot tell from the page whether the pizza is vegetarian. The test could use the response of `POST /api/pizza` from `cy.intercept` and assert that its `vegetarian` field is true. A stronger check would compare each ingredient with a list of vegetarian ingredients from the API.
+
+4. In Java I had to write every wait myself, and WaitTest failed with NoSuchElementException until I added one, while Cypress retried every command for 10 seconds by itself. QP-01 took about 8 s in both tools, but Cypress was quicker to write and gave a video and screenshots, while Java gave a Surefire text report. Both had trouble with Chrome 158: Selenium warned about CDP version 158, and Cypress crashed with "* is not a valid URL" between specs, so I ran each spec separately.
+
+5. My group used Selenium WebDriver with pytest for Project 2, and after this lab I would choose it again. The habits from Part 2 carried over directly, such as `WebDriverWait` instead of fixed pauses and page objects that keep the locators in one place. Selenium can also open a second browser for a staff user and a customer, while Cypress controls only one browser per test.
+
+6. (Part 2) QP01Test has the calories XPath inside the test method, so I would have to edit the test itself. In QP01PageObjectTest I would change only the constant `MAX_CALORIES` in HomePage. Every test that uses HomePage is then repaired at once.
+
+7. (Part 4) A cookie keeps one browser on one QuickPizza server, and Cypress clears cookies before each test. A separate test for steps 6 and 7 could reach another server, miss the pizza, and lose `pizzaName` and `@tool`. I saw this by hand when my first pizza, 20261124-022630, did not appear in the admin list.
