@@ -39,8 +39,8 @@ Tool parts that I chose: Part 2 Selenium WebDriver in Java and Part 4 Cypress
       +'Web Form'
 - Step 4.6, tool and calories in the answer of POST /api/pizza: tool Pizza cutter, calories 550 
 - Step 4.7, the line of the admin list that shows your pizza: Lab Pizza 20261124-173017 (tool=Scissors, ingredients_number=5)
-- Step 4.8, run 1, result, duration and pizza name:
-- Step 4.8, run 2, result, duration and pizza name:
+- Step 4.8, run 1, result, duration and pizza name: both specs passed (pizza-scenario 1 passing, 0 failing, 9 s; web-form 1 passing, 0 failing, 3 s; total 12 s), Pizza name: Lab Pizza 20261124-173936
+- Step 4.8, run 2, result, duration and pizza name: both specs passed (pizza-scenario 1 passing, 0 failing, 9 s; web-form 1 passing, 0 failing, 3 s; total 12 s), Pizza name: Lab Pizza 20261124-174556
 - Step 4.9 (optional), browser and result:
 
 ## Part B
